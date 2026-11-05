@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -17,84 +18,77 @@
     <h1>Image to CNC Depth Map</h1>
     <p>Convert your furniture designs into grayscale depth maps.</p>
 
-    <div class="workspace">
+```
+<div class="workspace">
 
-        <div class="upload-box">
+    <div class="upload-box">
 
-            <h3>Upload Normal Image</h3>
-            <input type="file" id="imageInput" accept="image/*">
+        <h3>Upload Existing Depth Map</h3>
+        <input type="file" id="depthInput" accept="image/png,image/jpeg">
 
-            <br><br>
+        <p>Upload your ready-made grayscale Depth Map.</p>
 
-            <button id="generateBtn">Generate AI Depth Map</button>
+    </div>
 
-            <hr>
+    <div class="preview">
 
-            <h3>Upload Existing Depth Map</h3>
-            <input type="file" id="depthInput" accept="image/png,image/jpeg">
-
-            <p>Upload your ready-made grayscale Depth Map.</p>
-
+        <div>
+            <h3>Original Image</h3>
+            <canvas id="originalCanvas"></canvas>
         </div>
 
-        <div class="preview">
-
-            <div>
-                <h3>Original Image</h3>
-                <canvas id="originalCanvas"></canvas>
-            </div>
-
-            <div>
-                <h3>AI / Existing Depth Map</h3>
-                <canvas id="depthCanvas"></canvas>
-            </div>
-
-        </div>
-
-        <div class="controls">
-
-            <label>Brightness</label>
-            <input type="range" id="brightness" min="-100" max="100" value="0">
-
-            <label>Contrast</label>
-            <input type="range" id="contrast" min="0" max="200" value="100">
-
-            <button id="downloadBtn">Download Depth Map PNG</button>
-
+        <div>
+            <h3>AI / Existing Depth Map</h3>
+            <canvas id="depthCanvas"></canvas>
         </div>
 
     </div>
 
-    <hr>
+    <div class="controls">
 
-    <section class="relief-panel">
+        <label>Brightness</label>
+        <input type="range" id="brightness" min="-100" max="100" value="0">
 
-        <h1>⚡ 3D CNC Relief Generator</h1>
-        <p>Convert Depth Map into a 3D CNC Relief Model.</p>
+        <label>Contrast</label>
+        <input type="range" id="contrast" min="0" max="200" value="100">
 
-        <div class="relief-controls">
+        <button id="downloadBtn">Download Depth Map PNG</button>
 
-            <label>Model Width (mm)</label>
-            <input type="number" id="modelWidth" value="300" min="10">
+    </div>
 
-            <label>Model Height (mm)</label>
-            <input type="number" id="modelHeight" value="200" min="10">
+</div>
 
-            <label>Carving Depth (mm)</label>
-            <input type="range" id="carvingDepth" min="1" max="30" value="10">
+<hr>
 
-            <span id="depthValue">10 mm</span>
+<section class="relief-panel">
 
-            <br><br>
+    <h1>⚡ 3D CNC Relief Generator</h1>
+    <p>Convert Depth Map into a 3D CNC Relief Model.</p>
 
-            <button id="create3D">Create 3D Relief</button>
-            <button id="exportSTL">Download STL</button>
+    <div class="relief-controls">
 
-        </div>
+        <label>Model Width (mm)</label>
+        <input type="number" id="modelWidth" value="300" min="10">
 
-        <div id="threePreview"></div>
+        <label>Model Height (mm)</label>
+        <input type="number" id="modelHeight" value="200" min="10">
 
-    </section>
+        <label>Carving Depth (mm)</label>
+        <input type="range" id="carvingDepth" min="1" max="30" value="10">
+
+        <span id="depthValue">10 mm</span>
+
+        <br><br>
+
+        <button id="create3D">Create 3D Relief</button>
+        <button id="exportSTL">Download STL</button>
+
+    </div>
+
+    <div id="threePreview"></div>
+
+</section>
+```
 
 </main>
 
